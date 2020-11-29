@@ -1,3 +1,6 @@
 [submodule "libraries/AzureIoT"]
 	path = libraries/AzureIoT
 	url = https://github.com/VSChina/ESP32_AzureIoT_Arduino
+[submodule "libraries/m5stack"]
+	path = libraries/m5stack
+	url = https://github.com/jfm0/m5stack
