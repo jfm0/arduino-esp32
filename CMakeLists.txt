@@ -149,8 +149,17 @@ set(includedirs
   libraries/Wire/src
   )
 
-set(srcs ${CORE_SRCS} ${LIBRARY_SRCS} ${BLE_SRCS})
-set(priv_includes cores/esp32/libb64)
+file(GLOB M5STACK_SRCS
+    "libraries/m5stack/src/*.h"
+    "libraries/m5stack/src/*.cpp"
+    "libraries/m5stack/src/utility/*.h"
+    "libraries/m5stack/src/utility/*.cpp"
+    "libraries/m5stack/src/Fonts/*.h"
+    "libraries/m5stack/src/Fonts/*.cpp"
+)
+
+set(srcs ${CORE_SRCS} ${LIBRARY_SRCS} ${BLE_SRCS} ${M5STACK_SRCS})
+set(priv_includes cores/esp32/libb64 libraries/m5stack/src)
 set(requires spi_flash mbedtls mdns esp_adc_cal)
 set(priv_requires fatfs nvs_flash app_update spiffs bootloader_support openssl bt tinyusb main)
 
