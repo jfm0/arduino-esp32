@@ -158,7 +158,16 @@ file(GLOB M5STACK_SRCS
     "libraries/m5stack/src/Fonts/*.cpp"
 )
 
-set(srcs ${CORE_SRCS} ${LIBRARY_SRCS} ${BLE_SRCS} ${M5STACK_SRCS})
+file(GLOB M5CORE2_SRCS
+    "libraries/M5Core2/src/*.h"
+    "libraries/M5Core2/src/*.cpp"
+    "libraries/M5Core2/src/utility/*.h"
+    "libraries/M5Core2/src/utility/*.cpp"
+    "libraries/M5Core2/src/Fonts/*.h"
+    "libraries/M5Core2/src/Fonts/*.cpp"
+)
+
+set(srcs ${CORE_SRCS} ${LIBRARY_SRCS} ${BLE_SRCS} ${M5STACK_SRCS} ${M5CORE2_SRCS})
 set(priv_includes cores/esp32/libb64 libraries/m5stack/src)
 set(requires spi_flash mbedtls mdns esp_adc_cal)
 set(priv_requires fatfs nvs_flash app_update spiffs bootloader_support openssl bt tinyusb main)
